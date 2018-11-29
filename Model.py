@@ -13,7 +13,7 @@ def SVM_train_and_predict(X_train, y_train, X_test, y_test):
     svmClassifier = svm.SVC()
     svmClassifier.fit(X_train, y_train)
     labels_predict = svmClassifier.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, svmClassifier
 
 def XGB_train_and_predict(X_train, y_train, X_test, y_test):
     XGBoostClassifier = XGBClassifier(booster='gbtree',
