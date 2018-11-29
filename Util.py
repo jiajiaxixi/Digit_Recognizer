@@ -12,6 +12,7 @@ from sklearn.multiclass import OneVsRestClassifier
 import LBP
 import skeleton
 import PCA
+import grid
 
 def preprocess(raw_data, feature_abstract_method):
     X_raw = raw_data.iloc[:, 1:]
@@ -21,10 +22,13 @@ def preprocess(raw_data, feature_abstract_method):
         X_train = LBP.lbp_extract(X_train)
         X_test = LBP.lbp_extract(X_test)
     elif (feature_abstract_method == 'PCA'):
-        return PCA()
+        X_train, X_test = PCA.PCA_extract(X_train, X_test)
     elif(feature_abstract_method == 'skeleton'):
         X_train = skeleton.skeleton_extract(X_train)
         X_test = skeleton.skeleton_extract(X_test)
+    elif (feature_abstract_method == 'grid'):
+        X_train = grid.grid_extract(X_train)
+        X_test = grid.grid_extract(X_test)
     return X_train, X_test, y_train, y_test
 
 def score(y_true, y_predict):
