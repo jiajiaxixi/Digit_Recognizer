@@ -3,6 +3,7 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 from sklearn.metrics import roc_curve, auc
@@ -14,10 +15,18 @@ import skeleton
 import PCA
 import grid
 
-def preprocess(raw_data, feature_abstract_method):
-    X_raw = raw_data.iloc[:, 1:]
-    y_raw = raw_data['label']
-    X_train, X_test, y_train, y_test = train_test_split(X_raw, y_raw, test_size=0.2)
+def preprocess(feature_abstract_method):
+    # X_raw = raw_data.iloc[:, 1:]
+    # y_raw = raw_data['label']
+    # X_train, X_test, y_train, y_test = train_test_split(X_raw, y_raw, test_size=0.2)
+    # X_train.to_csv('x_train.csv')
+    # X_test.to_csv('x_test.csv')
+    # y_train.to_csv('y_train.csv')
+    # y_test.to_csv('y_test.csv')
+    X_train = pd.read_csv('x_train.csv', index_col=0)
+    X_test = pd.read_csv('x_test.csv', index_col=0)
+    y_train = pd.read_csv('y_train.csv', index_col=0, header=None)
+    y_test = pd.read_csv('y_test.csv', index_col=0, header=None)
     if (feature_abstract_method == 'LBP'):
         X_train = LBP.lbp_extract(X_train)
         X_test = LBP.lbp_extract(X_test)
