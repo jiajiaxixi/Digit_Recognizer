@@ -11,10 +11,16 @@ import Model
 train_data_frame = pd.read_csv('train.csv', header=0)
 # test_data_frame = pd.read_csv('test.csv', header=0)
 
+
 X_train, X_test, y_train, y_test = Util.preprocess("grid")
 y_test, labels_predict, svmClassifier = Model.SVM_train_and_predict(X_train, y_train, X_test, y_test)
 Util.score(y_test, labels_predict)
 Util.ROC(y_test, labels_predict, X_test, svmClassifier)
+
+# y_test, labels_predict, svmClassifier = Model.RandomForest_train_and_predict(X_train, y_train, X_test, y_test)
+# Util.score(y_test, labels_predict)
+# Util.ROC(y_test, labels_predict, X_test, svmClassifier)
+
 
 # SVM.trainAndPredict(train_data_frame, test_data_frame, 0.75)
 # XGBoost.trainAndPredict(train_data_frame, test_data_frame, 0.75)

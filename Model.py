@@ -23,52 +23,52 @@ def XGB_train_and_predict(X_train, y_train, X_test, y_test):
                       seed=5)
     XGBoostClassifier.fit(X_train, y_train)
     labels_predict = XGBoostClassifier.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, XGBClassifier
 
 def AdaBoost_train_and_predict(X_train, y_train, X_test, y_test):
     AdaBoostClf = AdaBoostClassifier()
     AdaBoostClf.fit(X_train, y_train)
     labels_predict = AdaBoostClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, AdaBoostClf
 
 def GradientBoosting_train_and_predict(X_train, y_train, X_test, y_test):
     GradientBoostingClf = GradientBoostingClassifier()
     GradientBoostingClf.fit(X_train, y_train)
     labels_predict = GradientBoostingClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, GradientBoostingClf
 
 def Bagging_train_and_predict(X_train, y_train, X_test, y_test):
     BaggingClf = BaggingClassifier()
     BaggingClf.fit(X_train, y_train)
     labels_predict = BaggingClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, BaggingClf
 
 def CNN_train_and_predict(X_train, y_train, X_test, y_test):
     MLPClf = MLPClassifier()
     MLPClf.fit(X_train, y_train)
     labels_predict = MLPClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, MLPClf
 
 def DecisionTree_train_and_predict(X_train, y_train, X_test, y_test):
     DecisionTreeClf = DecisionTreeClassifier()
     DecisionTreeClf.fit(X_train, y_train)
     labels_predict = DecisionTreeClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, DecisionTreeClf
 
 def LogisticRegression_train_and_predict(X_train, y_train, X_test, y_test):
     LogisticRegressionClf = LogisticRegression()
     LogisticRegressionClf.fit(X_train, y_train)
     labels_predict = LogisticRegressionClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, LogisticRegressionClf
 
 def KNN_train_and_predict(X_train, y_train, X_test, y_test):
     KNeighborsClf = KNeighborsClassifier()
     KNeighborsClf.fit(X_train, y_train)
     labels_predict = KNeighborsClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, KNeighborsClf
 
 def RandomForest_train_and_predict(X_train, y_train, X_test, y_test):
     RandomForestClf = RandomForestClassifier()
     RandomForestClf.fit(X_train, y_train)
     labels_predict = RandomForestClf.predict(X_test)
-    return y_test, labels_predict
+    return y_test, labels_predict, RandomForestClf

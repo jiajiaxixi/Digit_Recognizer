@@ -13,7 +13,7 @@ def grid_extract(data):
         feature = np.empty((1, 16))
         for n in range(0, 4):
             for m in range(0, 4):
-                sub_area = image[n*4:n*4+7, m*4:m*4+7]
+                sub_area = image[n *4:n*4+7, m*4:m*4+7]
                 count = 0
                 for p in range(0, 7):
                     for q in range(0, 7):

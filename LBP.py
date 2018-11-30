@@ -9,7 +9,7 @@ def lbp_extract(data, point_num=24, radius=8):
 
     hist_matrix = np.empty((rows, radius+2 ))
     for i in range(0, rows):
-        print(str(i))
+        # print(str(i))
         image_vector = data[i, 0:cols]
         image = image_vector.reshape(28, 28)
         # cv2.namedWindow('image')

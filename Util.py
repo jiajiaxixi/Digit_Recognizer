@@ -83,6 +83,7 @@ def ROC(y_true, y_predict, X_test, classifier):
     plt.figure()
     lw = 2
     plt.plot(fpr[2], tpr[2], color='darkorange',
+
              lw=lw, label='ROC curve (area = %0.2f)' % roc_auc[2])
     plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
     plt.xlim([0.0, 1.0])
