@@ -11,9 +11,9 @@ from sklearn.preprocessing import label_binarize
 from sklearn.multiclass import OneVsRestClassifier
 
 import LBP
-import skeleton
+import SKELETON
 import PCA
-import grid
+import GRID
 import HOG
 
 def preprocess(feature_abstract_method):
@@ -34,11 +34,11 @@ def preprocess(feature_abstract_method):
     elif (feature_abstract_method == 'PCA'):
         X_train, X_test = PCA.PCA_extract(X_train, X_test)
     elif(feature_abstract_method == 'skeleton'):
-        X_train = skeleton.skeleton_extract(X_train)
-        X_test = skeleton.skeleton_extract(X_test)
+        X_train = SKELETON.skeleton_extract(X_train)
+        X_test = SKELETON.skeleton_extract(X_test)
     elif (feature_abstract_method == 'grid'):
-        X_train = grid.grid_extract(X_train)
-        X_test = grid.grid_extract(X_test)
+        X_train = GRID.grid_extract(X_train)
+        X_test = GRID.grid_extract(X_test)
     elif (feature_abstract_method == 'hog'):
         X_train = HOG.hog_extract(X_train)
         X_test = HOG.hog_extract(X_test)

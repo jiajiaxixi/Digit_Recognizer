@@ -8,7 +8,6 @@ def train(train_data) :
     pixel_number = len(train_data.columns) - 1
     # sample number
     data_number = len(train_data.index)
-    # data_number = 50
     # number of different digit
     label_counts = labels.value_counts()
 
@@ -31,7 +30,6 @@ def train(train_data) :
 
 def predict(test_data) :
     data_number = len(test_data.index)
-    # data_number = 50
     pixel_number = len(test_data.columns)
     labels_predict = np.zeros((data_number, 2))
 
@@ -40,7 +38,6 @@ def predict(test_data) :
 
     # calculate probability for every label every sample
     for i in range(0, data_number):
-        # print(i)
         labels_probability = np.zeros((1, 10))
         for n in range(0, 10):
             probability = 1

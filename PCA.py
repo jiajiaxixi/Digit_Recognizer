@@ -1,5 +1,4 @@
 from sklearn.decomposition import PCA
-import numpy as np
 
 
 def PCA_extract(train_data, test_data, n=0.75):
