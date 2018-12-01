@@ -2,12 +2,12 @@ import numpy as np
 from skimage import feature
 
 
-def lbp_extract(data, point_num=24, radius=8):
+def lbp_extract(data, point_num=8, radius=2):
     rows = data.shape[0]
     cols = data.shape[1]
     data = data.values
 
-    hist_matrix = np.empty((rows, radius+2 ))
+    hist_matrix = np.empty((rows, 10))
     for i in range(0, rows):
         # print(str(i))
         image_vector = data[i, 0:cols]

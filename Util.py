@@ -14,6 +14,7 @@ import LBP
 import skeleton
 import PCA
 import grid
+import HOG
 
 def preprocess(feature_abstract_method):
     # X_raw = raw_data.iloc[:, 1:]
@@ -38,6 +39,9 @@ def preprocess(feature_abstract_method):
     elif (feature_abstract_method == 'grid'):
         X_train = grid.grid_extract(X_train)
         X_test = grid.grid_extract(X_test)
+    elif (feature_abstract_method == 'hog'):
+        X_train = HOG.hog_extract(X_train)
+        X_test = HOG.hog_extract(X_test)
     return X_train, X_test, y_train, y_test
 
 def score(y_true, y_predict):

@@ -12,8 +12,8 @@ train_data_frame = pd.read_csv('train.csv', header=0)
 # test_data_frame = pd.read_csv('test.csv', header=0)
 
 
-X_train, X_test, y_train, y_test = Util.preprocess("PCA")
-y_test, labels_predict, classifier = Model.GradientBoosting_train_and_predict(X_train, y_train, X_test, y_test)
+X_train, X_test, y_train, y_test = Util.preprocess("hog")
+y_test, labels_predict, classifier = Model.SVM_train_and_predict(X_train, y_train, X_test, y_test)
 Util.score(y_test, labels_predict)
 Util.ROC(y_test, labels_predict, X_test, classifier)
 
